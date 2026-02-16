@@ -1,0 +1,16 @@
+replicaCount: 3
+
+image:
+  repository: nginx
+  tag: latest
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30080   # internal NodePort inside KIND
+
+config:
+  html: |
+    <h1>Hello Ashutosh from Helm!</h1>
+    <p>This content is loaded from a Helm-managed ConfigMap.</p>
+
